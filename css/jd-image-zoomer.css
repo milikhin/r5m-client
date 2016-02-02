@@ -1,0 +1,128 @@
+.image-zoomer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.85) none repeat scroll 0% 0%;
+  width: 100%;
+  height: 100%;
+  display: none;
+  z-index: 500;
+}
+
+.image-zoomer.visible {
+  display: block;
+}
+
+.image-zoomer figure {
+  position: absolute;
+  top: 0;
+  left: 60px;
+  right: 60px;
+  bottom: 1.5rem;
+  margin: 20px 20px 0 20px;
+}
+
+.image-zoomer nav button {
+  width: 100px;
+  height: 100%;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  position: absolute;
+  top: 0;
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
+  -webkit-transform: translateY(0);
+  -o-transform: translateY(0);
+  transform: translateY(0);
+  font-size: 25px;
+  color: #777;
+  cursor: pointer;
+}
+
+.image-zoomer nav .image-zoomer__left {
+  left: 0;
+  font-family: Roboto;
+  font-weight: 300;
+}
+
+.image-zoomer__text,
+.image-zoomer__text {
+  transform: scale(0.6, 2);
+}
+
+.image-zoomer nav .image-zoomer__right {
+  right: 0;
+  top: 50px;
+  bottom: 0;
+  height: auto;
+}
+
+.image-zoomer nav button:hover {
+  color: #e4e4e4;
+  border-color: #e4e4e4;
+  background: rgba(0, 0, 0, 0.25);
+}
+
+.image-zoomer nav button.inactive,
+.image-zoomer nav button.inactive:hover {
+  color: #777;
+  border-color: #777;
+  opacity: 0.15;
+}
+
+.image-zoomer nav .image-zoomer__close {
+  top: 0;
+  height: 50px;
+  right: 0;
+  border: medium none;
+  right: 20;
+  background: transparent;
+  color: #999;
+  transform: translateY(0px);
+  -webkit-transform: translateY(0px);
+  -ms-transform: translateY(0px);
+  -moz-transform: translateY(0px);
+  -o-transform: translateY(0px);
+}
+
+.image-zoomer figcaption {
+  position: absolute;
+  top: 100%;
+  line-height: 1.5rem;
+  margin:0;
+  font-size: 0.9rem;
+  color: #e4e4e4;
+  left: 20px;
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
+  -o-transform: translateX(0);
+  transform: translateX(0);
+}
+
+.image-zoomer__loading {
+  display: none;
+  padding: 0 5px;
+}
+
+.image-zoomer__loading-visible {
+  display: inline;
+}
+
+.fade {
+  -webkit-transition: opacity 0.5s ease-in-out;
+ -moz-transition: opacity 0.5s ease-in-out;
+ transition: opacity 0.5s ease-in-out;
+ -o-transition: opacity 0.5s ease-in-out;
+}
+
+.fade-in {
+  opacity: 1;
+}
+
+.fade-out {
+  opacity: 0;
+}

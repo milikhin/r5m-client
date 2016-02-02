@@ -1,0 +1,224 @@
+/** feedback */
+
+.r5mFeedback__input,
+.r5mFeedback__text {
+  display: block;
+  position: relative;
+  margin-bottom: 10px;
+  /*padding: 22px 15px 10px 15px;*/
+  padding: 12px;
+  /*font-size: 1.3rem;*/
+  font-size: 20px;
+  width: 100%;
+  color: #252525;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  border: 1px solid #99999a;
+}
+
+.r5mFeedback__text {
+  min-height: 80px;
+  max-height: 200px;
+  max-width: 100%;
+  min-width: 100%;
+}
+
+.r5mFeedback__label {
+  position: relative;
+  display: block;
+}
+
+.r5mFeedback__placeholder {
+  position: absolute;
+  top: 10px;
+  display: block;
+  z-index: 2;
+  left: 16px;
+  color: #99999a;
+  font-size: 20px;
+  cursor: text;
+}
+
+.r5mFeedback__placeholder-top {
+  top: 1px;
+  font-size: 14px;
+  color: #666;
+  cursor: initial;
+}
+
+.r5mFeedback__input-with-modern-placeholder {
+  padding: 19px 15px 5px 15px;
+}
+
+
+/**/
+
+
+/*.r5mFeedback-container {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 10;
+  width: 100%;
+  height: inherit;
+  background-color: rgba(10%, 10%, 10%, 0.5);
+}*/
+
+.r5m-dimmer .r5mFeedback {
+  display: block;
+  /*position: fixed;*/
+  /*top: 20%;*/
+  /*left: 50%;*/
+  /*margin-left: -240px;*/
+  margin: auto;
+  padding: 15px;
+  text-align: center;
+  background-color: rgba(100%, 100%, 100%, 0.9);
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  width: 300px;
+}
+
+.r5m-dimmer .r5mFeedback__form {
+  margin: 0;
+  padding: 0;
+}
+
+.r5m-dimmer .r5mFeedback__form__header {
+  margin: 0 0 15px 0;
+  padding: 0;
+  font-size: 1.25rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #2b2a29;
+}
+
+.r5m-dimmer .r5mFeedback__input,
+.r5m-dimmer .r5mFeedback__text {
+  display: block;
+  position: relative;
+  margin-bottom: 10px;
+  /*padding: 22px 15px 10px 15px;*/
+  padding: 12px;
+  /*font-size: 1.3rem;*/
+  font-size: 20px;
+  width: 100%;
+  color: #252525;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  border: 1px solid #99999a;
+  background-color: white;
+}
+
+.r5m-dimmer .r5mFeedback__text {
+  min-height: 80px;
+  max-height: 200px;
+  max-width: 100%;
+  min-width: 100%;
+}
+
+.r5m-dimmer .r5mFeedback__submit-button {
+  width: 300px;
+  margin-top: 10px;
+  padding: 8px 0;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  background-color: #1f1b20;
+  color: #ffffff;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  cursor: pointer;
+  border: solid 1px #1f1b20;
+}
+
+.r5m-dimmer .r5mFeedback__submit-button:hover {
+  background: #fefefe;
+  color: #1f1b20;
+}
+
+.r5m-dimmer .r5mFeedback__close-button {
+  display: none;
+}
+
+.r5m-dimmer .r5mFeedback__close-button {
+  position: absolute;
+  top: 14px;
+  right: 10px;
+  font-size: 1.25rem;
+  font-weight: bold;
+  border-style: none;
+  background-color: rgba(100%, 100%, 100%, 0);
+  color: #a4a1a1;
+  cursor: pointer;
+  display: block;
+}
+
+.r5m-dimmer .r5mFeedback__close-button:hover {
+  color: #9C241D;
+}
+
+.r5m-dimmer .r5mDialog__ok__close {
+  border: 1px solid #1f1b20;
+  border-radius: 6px;
+  color: #1f1b20;
+  display: inline-block;
+  font-size: 0.9rem;
+  font-weight: normal;
+  margin-top: 10px;
+  width: 100%;
+  padding: 5px 15px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.r5m-dimmer .r5mDialog__ok__close:hover {
+  cursor: pointer;
+  background-color: #F2F2F2;
+}
+
+.r5m-dimmer .r5mFeedback__label {
+  position: relative;
+  display: block;
+}
+
+.r5m-dimmer .r5mFeedback__placeholder {
+  position: absolute;
+  top: 10px;
+  display: block;
+  z-index: 2;
+  left: 16px;
+  color: #99999a;
+  font-size: 20px;
+  cursor: text;
+}
+
+.r5m-dimmer .r5mFeedback__placeholder-top {
+  top: 1px;
+  font-size: 14px;
+  color: #666;
+  cursor: initial;
+  background-color: white;
+  right: 15px;
+  text-align: left;
+  -webkit-box-shadow: 0 2px 2px 0 white;
+  -moz-box-shadow: 0 2px 2px 0 white;
+  box-shadow: 0 2px 2px 0 white;
+}
+
+.r5m-dimmer .r5mFeedback__input-with-modern-placeholder {
+  padding: 19px 15px 5px 15px;
+}

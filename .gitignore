@@ -1,0 +1,5 @@
+.bower.json
+test/
+tests/
+node_modules/
+bower_components/

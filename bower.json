@@ -1,0 +1,28 @@
+{
+  "name": "r5m-cms",
+  "description": "Client-side JavaScript library for r5m-cms",
+  "main": "index.js",
+  "authors": [
+    "mikhael <mikhael@milikhin.name>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "r5m"
+  ],
+  "moduleType": [
+    "amd"
+  ],
+  "homepage": "http://r5m.me",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "requirejs": "^2.1.22",
+    "qwest": "^3.0.0"
+  }
+}

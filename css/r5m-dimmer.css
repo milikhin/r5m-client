@@ -1,0 +1,56 @@
+.r5m-dimmer {
+  background-color: rgba(10%, 10%, 10%, 0.75);
+  z-index: 10;
+}
+
+/*
+  Идея: нельзя анимировать display: none, а хочется
+  Что делаем: анимируем opacity, а после того как opacity стал 0 анимируем высоту, чтобы скрыть элемент
+  при проявлении - наоборот, сначала анимируем высоту, а потом opacity.
+
+  Profit.
+*/
+
+.r5m-dimmer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 0;
+  opacity: 0;
+  /*display: none;*/
+  overflow: hidden;
+  /*pointer-events: none;*/
+  -webkit-transition: opacity 0.5s 0s, height 0.1s 0.5s;
+  -moz-transition: opacity 0.5s 0s, height 0.1s 0.5s;
+  -o-transition: opacity 0.5s 0s, height 0.1s 0.5s;
+  -ms-transition: opacity 0.5s 0s, height 0.1s 0.5s;
+  transition: opacity 0.5s 0s, height 0.1s 0.5s;
+}
+
+.r5m-dimmer-active {
+  /*display: block;*/
+  /*pointer-events: all;*/
+  height: 100%;
+  opacity: 1;
+  -webkit-transition: opacity 0.5s 0.1s, height 0.1s 0s;
+  -moz-transition: opacity 0.5s 0.1s, height 0.1s 0s;
+  -o-transition: opacity 0.5s 0.1s, height 0.1s 0s;
+  -ms-transition: opacity 0.5s 0.1s, height 0.1s 0s;
+  transition: opacity 0.5s 0.1s, height 0.1s 0s;
+}
+
+.r5m-dimmer__container {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -moz-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.r5m-dimmer__link {
+  color: white;
+}

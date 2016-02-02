@@ -1,0 +1,22 @@
+.r5m-dimmer {
+  color: #dedede;
+  background-color: rgba(10%, 10%, 10%, 0.95);
+  text-align: center;
+}
+
+
+.r5m-dimmer-thanks__button {
+  padding: 10px;
+  width: 200px;
+  color: #dedede;
+  border: solid 1px #dedede;
+  border-radius: 4px;
+  background: transparent;
+}
+
+.r5m-dimmer-thanks__button:hover {
+  background: #dedede;
+  color: #333;
+  border-color: #333;
+  cursor: pointer;
+}
