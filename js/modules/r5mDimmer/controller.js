@@ -33,7 +33,7 @@ define([], function () {
 
 		var actionType = type || target.getAttribute('data-type');
 		var actionText = target.getAttribute('data-text');
-		console.log(actionType);
+
 
 		//по-умолчанию просто показываем dimmer
 		if (!actionType) {
@@ -62,11 +62,23 @@ define([], function () {
 
 		// показываем тот, который нам нужен
 		var elementToShow = this.dimmer.getElementsByClassName('r5m-dimmer-' + type)[0];
+		//console.log("e", this.dimmer.getElementsByClassName('r5m-dimmer-' + type));
 		if (elementToShow) {
 			elementToShow.classList.remove('is-hidden');
+
+			// заполняем форму (ее Textarea) текстом по-умолчанию
+			var textField = elementToShow.getElementsByTagName('TEXTAREA')[0];
+			if (textField) {
+				textField.value = defaultText || '';
+				textField.dispatchEvent(new Event('input', {bubbles: true, cancelable: false}));
+			}
+
 		}
 
 		this.dimmer.classList.add('r5m-dimmer-active');
+
+
+
 
 		// try {
 		// 	var commentsTextElem = this.dimmer.getElementsByClassName('r5mFeedback__text')[0];
