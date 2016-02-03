@@ -33,6 +33,7 @@ define([
 
 			self.send(data).then(function () {
 				self._showSuccessDialog(form, 'thanks');
+				self._reachYandexGoal();
 			}, function () {
 				self._showSuccessDialog(form, 'oops');
 			});
@@ -127,6 +128,15 @@ define([
 
 		[].forEach.call(form.getElementsByTagName('textarea'), self._setupPlaceholder);
 		[].forEach.call(form.getElementsByTagName('input'), self._setupPlaceholder);
+	};
+
+	FeedbackController.prototype._reachYandexGoal = function () {
+		var self = this;
+
+		//нужно убедиться что метрика точно есть и что цель точно есть
+		if (window.r5m && window.r5m.Yandex && window.r5m.Yandex.counter && window.r5m.Yandex.goalName) {
+			window.r5m.Yandex.counter.reachGoal(window.r5m.Yandex.goalName);
+		}
 	};
 
 	return new FeedbackController();
