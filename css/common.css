@@ -19,12 +19,6 @@ body {
   min-width: 900px;
 }
 
-body {
-  background: url('../images/whatis.jpg') no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-}
-
 /*.skype_c2c_text_span {
   font: inherit!important;
 }*/
