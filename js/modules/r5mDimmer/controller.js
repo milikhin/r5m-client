@@ -35,8 +35,12 @@ define([], function() {
     var actionText = target.getAttribute('data-text');
 
     var scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
-    document.body.style.marginRight = scrollbarWidth + "px";
+
+    if(!document.body.style.marginRight || document.body.style.marginRight == '0px') {
+      document.body.style.marginRight = scrollbarWidth + "px";
+    }
 		document.body.classList.add('with-dimmer');
+
     //по-умолчанию просто показываем dimmer
     if (!actionType) {
       self.dimmer.classList.add('r5m-dimmer-active');

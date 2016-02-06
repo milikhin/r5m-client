@@ -19,23 +19,49 @@ define([
     }, this);
   };
 
+  FeedbackController.prototype._disableSubmit = function (form) {
+    try {
+      var submitElem = form.getElementsByClassName('submit-button')[0];
+      submitElem.disabled = true;
+      submitElem.dataset.value = submitElem.innerHTML;
+      submitElem.innerHTML = 'Подождите пожалуйста...';
+    } catch(err) {
+      console.log(err);
+    }
+  };
+
+  FeedbackController.prototype._enableSubmit = function (form) {
+    try {
+      var submitElem = form.getElementsByClassName('submit-button')[0];
+      submitElem.disabled = false;
+      if(submitElem.dataset.value) {
+        submitElem.innerHTML = submitElem.dataset.value;
+      }
+    } catch(err) {
+      console.log(err);
+    }
+  };
+
   FeedbackController.prototype._addSubmitHandler = function(form) {
     var self = this;
 
     form.onsubmit = function() {
       var data = {};
+      self._disableSubmit(form);
       ['name', 'phone', 'email', 'text'].forEach(function(field) {
         if (form[field]) {
           data[field] = form[field].value;
         }
       });
-      
+
       self._reachYandexGoal(form.dataset.metrikaGoal);
 
       self.send(data).then(function() {
         self._showSuccessDialog(form, 'thanks');
+        self._enableSubmit(form);
       }, function() {
         self._showSuccessDialog(form, 'oops');
+        self._enableSubmit(form);
       });
 
       return false;
@@ -50,7 +76,12 @@ define([
     switch (this._service) {
       case 'emailjs':
         {
-          // ...
+          try {
+            return emailjs.send("info", "callme", data);
+          } catch(err) {
+            console.log('error sending with emailjs.com');
+          }
+
           break;
         }
 

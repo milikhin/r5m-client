@@ -141,17 +141,26 @@
   text-transform: uppercase;
   background-color: #1f1b20;
   color: #ffffff;
+
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
   cursor: pointer;
   border: solid 1px #1f1b20;
+
 }
 
 .r5m-dimmer .r5mFeedback__submit-button:hover {
   background: #fefefe;
   color: #1f1b20;
 }
+
+.r5m-dimmer .r5mFeedback__submit-button:disabled {
+  background: #ccc;
+  color: #666;
+  border-color: #666;
+}
+
 
 .r5m-dimmer .r5mFeedback__close-button {
   display: none;
