@@ -234,3 +234,8 @@
 .r5m-dimmer .r5mFeedback__input-with-modern-placeholder {
   padding: 19px 15px 5px 15px;
 }
+
+
+.r5m-dimmer .r5mFeedback__form__offer {
+  color: #333;
+}
