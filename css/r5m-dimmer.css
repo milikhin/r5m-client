@@ -1,6 +1,7 @@
 .r5m-dimmer {
   background-color: rgba(10%, 10%, 10%, 0.75);
   z-index: 10;
+  overflow: auto;
 }
 
 /*
@@ -19,7 +20,6 @@
   height: 0;
   opacity: 0;
   /*display: none;*/
-  overflow: hidden;
   /*pointer-events: none;*/
   -webkit-transition: opacity 0.5s 0s, height 0.1s 0.5s;
   -moz-transition: opacity 0.5s 0s, height 0.1s 0.5s;
@@ -40,7 +40,7 @@
   transition: opacity 0.5s 0.1s, height 0.1s 0s;
 }
 
-.r5m-dimmer__container {
+/*.r5m-dimmer__container {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -49,7 +49,28 @@
   -ms-transform: translate(-50%, -50%);
   -o-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+}*/
+
+/* min-height implementation */
+.r5m-dimmer-wrapper {
+  display: inline-block;
+  vertical-align: middle;
 }
+
+.r5m-dimmer__container {
+  text-align: center;
+  position: relative;
+}
+
+.r5m-dimmer__container::before {
+  content: '';
+  display: inline-block;
+  height: 100vh;
+  vertical-align: middle;
+  margin-right: -0.25em;
+}
+
+
 
 .r5m-dimmer__link {
   color: white;

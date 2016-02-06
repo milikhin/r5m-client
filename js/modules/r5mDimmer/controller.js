@@ -34,7 +34,7 @@ define([], function () {
 		var actionType = type || target.getAttribute('data-type');
 		var actionText = target.getAttribute('data-text');
 
-
+		document.body.classList.add('with-dimmer');
 		//по-умолчанию просто показываем dimmer
 		if (!actionType) {
 			self.dimmer.classList.add('r5m-dimmer-active');
@@ -49,6 +49,7 @@ define([], function () {
 			return;
 		}
 
+		document.body.classList.remove('with-dimmer');
 		this.dimmer.classList.remove('r5m-dimmer-active');
 	};
 

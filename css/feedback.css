@@ -87,6 +87,7 @@
   -moz-border-radius: 5px;
   border-radius: 5px;
   width: 300px;
+  position: relative;
 }
 
 .r5m-dimmer .r5mFeedback__form {

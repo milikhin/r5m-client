@@ -19,12 +19,16 @@ body {
   min-width: 900px;
 }
 
+body.with-dimmer {
+  overflow: hidden;
+}
+
 /*.skype_c2c_text_span {
   font: inherit!important;
 }*/
 
 .is-hidden {
-  display: none;
+  display: none!important;
 }
 
 section h2 {
