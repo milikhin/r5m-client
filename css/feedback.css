@@ -41,6 +41,7 @@
   color: #99999a;
   font-size: 20px;
   cursor: text;
+  line-height: 30px;
 }
 
 .r5mFeedback__placeholder-top {
@@ -48,6 +49,7 @@
   font-size: 14px;
   color: #666;
   cursor: initial;
+  line-height: 20px;
 }
 
 .r5mFeedback__input-with-modern-placeholder {
