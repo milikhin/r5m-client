@@ -1,7 +1,8 @@
 define([
   'vendor/qwest/qwest.min',
+  'vendor/formatter.js/dist/formatter',
   'r5m/modules/r5mDimmer/controller'
-], function(xhr, dimmer) {
+], function(xhr, Formatter, dimmer) {
   'use strict';
 
   function FeedbackController() {
@@ -16,28 +17,37 @@ define([
     [].forEach.call(document.querySelectorAll('.r5mFeedback__form'), function(formElem) {
       this._addModernPlaceholderHandler(formElem);
       this._addSubmitHandler(formElem);
+
     }, this);
+
+    [].forEach.call(document.querySelectorAll('[name="phone"]'), function(elem) {
+      new Formatter(elem, {
+        'pattern': '+7({{999}})-{{999}}-{{9999}}',
+        'persistent': true
+      });
+      window.scrollTo(0, 0);
+    });
   };
 
-  FeedbackController.prototype._disableSubmit = function (form) {
+  FeedbackController.prototype._disableSubmit = function(form) {
     try {
       var submitElem = form.getElementsByClassName('submit-button')[0];
       submitElem.disabled = true;
       submitElem.dataset.value = submitElem.innerHTML;
       submitElem.innerHTML = 'Подождите пожалуйста...';
-    } catch(err) {
+    } catch (err) {
       console.log(err);
     }
   };
 
-  FeedbackController.prototype._enableSubmit = function (form) {
+  FeedbackController.prototype._enableSubmit = function(form) {
     try {
       var submitElem = form.getElementsByClassName('submit-button')[0];
       submitElem.disabled = false;
-      if(submitElem.dataset.value) {
+      if (submitElem.dataset.value) {
         submitElem.innerHTML = submitElem.dataset.value;
       }
-    } catch(err) {
+    } catch (err) {
       console.log(err);
     }
   };
@@ -78,7 +88,7 @@ define([
         {
           try {
             return emailjs.send("info", "callme", data);
-          } catch(err) {
+          } catch (err) {
             console.log('error sending with emailjs.com');
           }
 
