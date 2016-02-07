@@ -1,7 +1,7 @@
 define([
   'vendor/qwest/qwest.min',
   'r5m/modules/r5mDimmer/controller'
-], function(xhr, Masker, dimmer) {
+], function(xhr, dimmer) {
   'use strict';
 
   function FeedbackController() {
