@@ -1,8 +1,7 @@
 define([
   'vendor/qwest/qwest.min',
-  'vendor/formatter.js/dist/formatter',
   'r5m/modules/r5mDimmer/controller'
-], function(xhr, Formatter, dimmer) {
+], function(xhr, Masker, dimmer) {
   'use strict';
 
   function FeedbackController() {
@@ -20,13 +19,16 @@ define([
 
     }, this);
 
-    [].forEach.call(document.querySelectorAll('[name="phone"]'), function(elem) {
-      new Formatter(elem, {
-        'pattern': '+7({{999}})-{{999}}-{{9999}}',
-        'persistent': true
-      });
-      window.scrollTo(0, 0);
-    });
+    // Masker(document.querySelectorAll('[name="phone"]')).maskPattern("(999) 999-9999");
+
+    // [].forEach.call(document.querySelectorAll('[name="phone"]'), function(elem) {
+    //
+    //   // new Formatter(elem, {
+    //   //   'pattern': '+7({{999}})-{{999}}-{{9999}}',
+    //   //   'persistent': true
+    //   // });
+    //   // window.scrollTo(0, 0);
+    // });
   };
 
   FeedbackController.prototype._disableSubmit = function(form) {

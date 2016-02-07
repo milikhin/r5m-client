@@ -23,7 +23,6 @@
   ],
   "dependencies": {
     "requirejs": "^2.1.22",
-    "qwest": "^3.0.0",
-    "formatter": "^0.1.5"
+    "qwest": "^3.0.0"
   }
 }
