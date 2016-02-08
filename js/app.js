@@ -1,14 +1,17 @@
 define([
 	'r5m/modules/lib/closest',
+	'r5m/modules/lib/custom-event',
+	'r5m/modules/lib/dataset',
 	'r5m/modules/r5mDimmer/controller',
 	'r5m/modules/feedback/controller',
 	'r5m/modules/gallery/controller',
 	'r5m/modules/carousel/controller'
-], function (applyClosestPolyfill) {
+], function (applyClosestPolyfill, applyCustomEventPolyfill) {
 
 	return function (modules) {
 		var activeModules = [];
 		applyClosestPolyfill(window.Element.prototype);
+		applyCustomEventPolyfill(window);
 
 		if (!modules) {
 			return;
