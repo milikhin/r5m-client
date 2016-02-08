@@ -80,7 +80,7 @@ define([], function() {
       var textField = elementToShow.getElementsByTagName('TEXTAREA')[0];
       if (textField) {
         textField.value = defaultText || '';
-        textField.dispatchEvent(new Event('input', {
+        textField.dispatchEvent(new CustomEvent('input', {
           bubbles: true,
           cancelable: false
         }));
