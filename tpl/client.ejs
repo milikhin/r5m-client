@@ -1,3 +1,4 @@
+<script>
 var isDebug = ~location.search.indexOf("debug=1");
 
 require.config({
@@ -25,3 +26,4 @@ require([isDebug ? 'r5m' : 'dist/lp'], function() {
     window.emailjs.init(window.r5m.app.EMAILJS_ID);
   }
 })();
+</script>

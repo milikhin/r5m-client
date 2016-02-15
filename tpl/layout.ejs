@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>
+    <% if(subtitle) { %>
+      <%= subtitle %>.
+    <% } %>
+    <%= title %>
+  </title>
+  <link href="./dist/lp.css" rel="stylesheet" type="text/css" />
+  <% for (var i=0; i<locals.fonts.google; i++) { %>
+  <link href="<%= locals.fonts.google[i] %>" rel="stylesheet" type="text/css">
+  <% } %>
+</head>
+
+<body>
+  <% for(var i=0; i<locals.parts.length; i++) { %>
+  <%- include('../../../tpl/partials/' + locals.parts[i]) %>
+  <% } %>
+
+  <script>
+    window.r5m = {
+      app: {
+        // FEEDBACK_SERVICE: 'emailjs',
+        FEEDBACK_SERVICE: '<%= feedbackService %>'
+      },
+      yandex: {
+        COUNTER_ID: '<%= yandexId %>',
+        DEFAULT_GOAL: 'r5m-call-me'
+      },
+      modules: ['feedback', 'r5mDimmer', 'carousel', 'gallery'],
+    };
+  </script>
+  <script src="./dist/require.js"></script>
+
+  <%- include('./client.ejs') %>
+</body>
+
+</html>
