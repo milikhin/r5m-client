@@ -101,7 +101,7 @@ define([
       default:
         {
           data._subject = 'Сообщение на сайте';
-          return xhr.post('http://formspree.io/milikhin@gmail.com', data, {
+          return xhr.post('https://formspree.io/milikhin@gmail.com', data, {
             cache: true,
             headers: {
               'Accept': 'application/json'
