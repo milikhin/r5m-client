@@ -7,8 +7,8 @@ define([
   function FeedbackController() {
     // this.formElem = formElem;
     this._service = 'formspree';
-    if (window.r5m && window.r5m.FEEDBACK_SERVICE) {
-      this._service = window.r5m.FEEDBACK_SERVICE;
+    if (window.r5m && window.r5m.app.FEEDBACK_SERVICE) {
+      this._service = window.r5m.app.FEEDBACK_SERVICE;
     }
   }
 
@@ -89,7 +89,7 @@ define([
       case 'emailjs':
         {
           try {
-            return emailjs.send("info", "callme", data);
+            return window.emailjs.send("info", "callme", data);
           } catch (err) {
             console.log('error sending with emailjs.com');
           }
@@ -174,12 +174,10 @@ define([
   };
 
   FeedbackController.prototype._reachYandexGoal = function(goalName) {
-    var self = this;
-
     //нужно убедиться что метрика точно есть и что цель точно есть
     try {
-      var metrikaConf = window.r5m.Yandex;
-      window["yaCounter" + metrikaConf.counterId].reachGoal(goalName || metrikaConf.defaultGoal);
+      var metrikaConf = window.r5m.yandex;
+      window["yaCounter" + metrikaConf.COUNTER_IR].reachGoal(goalName || metrikaConf.DEFAULT_GOAL);
     } catch (e) {
       console.log('Error in metrika');
     }
