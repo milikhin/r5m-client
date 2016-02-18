@@ -10,7 +10,7 @@
     <%= title %>
   </title>
   <link href="./dist/lp.css" rel="stylesheet" type="text/css" />
-  <% for (var i=0; i<locals.fonts.google; i++) { %>
+  <% for (var i=0; i<locals.fonts.google.length; i++) { %>
   <link href="<%= locals.fonts.google[i] %>" rel="stylesheet" type="text/css">
   <% } %>
 </head>
