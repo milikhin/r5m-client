@@ -6,6 +6,7 @@ define([
 	'r5m/modules/r5mDimmer/controller',
 	'r5m/modules/feedback/controller',
 	'r5m/modules/gallery/controller',
+	'r5m/modules/utm-content/controller',
 	'r5m/modules/carousel/controller'
 ], function (applyClosestPolyfill, applyCustomEventPolyfill) {
 
