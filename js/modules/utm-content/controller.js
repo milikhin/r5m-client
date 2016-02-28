@@ -14,7 +14,7 @@ define(['r5m/modules/lib/query-parser'], function(QueryParser) {
       var utmElements = document.querySelectorAll('.' + utmParamName);
       for(var i in utmParam) {
         console.log(this.queryParser.get('utm_term'));
-        if(this.queryParser.get('utm_term') && ~this.queryParser.get('utm_term').indexOf(i)) {
+        if(this.queryParser.get('utm_term') && ~this.queryParser.get('utm_term').toLowerCase().indexOf(i)) {
           [].forEach.call(utmElements, function(utmElement) {
             utmElement.innerHTML = utmParam[i];
           }, this);
