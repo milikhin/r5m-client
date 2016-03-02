@@ -177,9 +177,10 @@ define([
     //нужно убедиться что метрика точно есть и что цель точно есть
     try {
       var metrikaConf = window.r5m.yandex;
-      window["yaCounter" + metrikaConf.COUNTER_IR].reachGoal(goalName || metrikaConf.DEFAULT_GOAL);
+      // console.log("yaCounter" + metrikaConf.COUNTER_ID);
+      window["yaCounter" + metrikaConf.COUNTER_ID].reachGoal(goalName || metrikaConf.DEFAULT_GOAL);
     } catch (e) {
-      console.log('Error in metrika');
+      console.log('Error in metrika', e);
     }
 
   };
