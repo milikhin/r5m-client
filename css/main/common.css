@@ -1,0 +1,33 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body.with-dimmer {
+  overflow: hidden;
+}
+
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.flexible-container {
+  min-width: 800px;
+  max-width: 1400px;
+  margin: auto;
+  padding: 0 50px;
+}
+
+/*.skype_c2c_text_span {
+  font: inherit!important;
+}*/
+
+.is-hidden {
+  display: none!important;
+}
+
+.mobile-only {
+  display: none!important;
+}

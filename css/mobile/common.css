@@ -1,0 +1,12 @@
+.flexible-container {
+  min-width: 280px;
+  padding: 0 10px;
+}
+
+.mobile-only {
+  display: inherit!important;
+}
+
+.nomobile-only {
+  display: none!important;
+}
