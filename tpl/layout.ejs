@@ -41,7 +41,7 @@
         DEFAULT_GOAL: 'r5m-call-me'
       },
       modules: ['feedback', 'r5mDimmer', 'carousel', 'gallery', 'page', 'utm-content'],
-      utmContent: <%- locals.utmContent ? JSON.stringify(locals.utmContent) : {}%>
+      utmContent: <%- locals.utmContent ? JSON.stringify(locals.utmContent) : JSON.stringify({}) %>
     };
   </script>
   <script src="./dist/require.js"></script>

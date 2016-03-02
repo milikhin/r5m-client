@@ -49,15 +49,19 @@ define([], function () {
 		this.moveToSlide(currentSlide);
 	};
 
-	Carousel.prototype.moveLeft = function () {
-		this._shiftCarousel(-1);
-	};
+	Carousel.prototype.moveLeft = function(doNotClearInterval) {
+    this._shiftCarousel(-1, !!+doNotClearInterval);
+  };
 
-	Carousel.prototype.moveRight = function () {
-		this._shiftCarousel(+1);
-	};
+  Carousel.prototype.moveRight = function(doNotClearInterval) {
+    this._shiftCarousel(+1, !!+doNotClearInterval);
+  };
 
-	Carousel.prototype._shiftCarousel = function (step) {
+	Carousel.prototype._shiftCarousel = function (step, doNotClearInterval) {
+		if (!doNotClearInterval && this.carouselInterval) {
+      clearInterval(this.carouselInterval);
+    }
+
 		var currentIndex = +this.carouselContentElem.getAttribute('data-carousel-currentSlide');
 		var newIndex = currentIndex + step;
 
@@ -117,8 +121,12 @@ define([], function () {
 	};
 
 	Carousel.prototype.startup = function () {
+		var self = this;
 		this.carouselContentElem.classList.remove(this.settings.classNames.animation);
 		this.moveToSlide(this.settings.isRounded ? 1 : 0);
+		this.carouselInterval = setInterval(function() {
+        self.moveRight(true);
+    }, 10000)
 	};
 
 	Carousel.prototype._enableInfinityRoundLoop = function () {
