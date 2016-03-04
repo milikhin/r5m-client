@@ -12,12 +12,16 @@ define([
 		this._selector = '.r5m-custom-page, .gallery-container';
 		this._photos = {};
 
-		this.ui = new Ui('r5m-gallery-img', 'r5m-gallery-link').init();
 	}
 
 	Gallery.prototype.init = function () {
 		this.pageElems = $(this._selector);
 		this._updatePhotosList();
+
+		[].forEach.call($(this._selector), function(galleryContainerElem) {
+			new Ui('r5m-gallery-img', 'r5m-gallery-link', galleryContainerElem).init();
+		}, this);
+
 	};
 
 	Gallery.prototype._updatePhotosList = function () {

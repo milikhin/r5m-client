@@ -10,7 +10,7 @@ define([], function () {
 			total : Total amount of images in the gallery
 	*
 	*/
-	function ImageZoomer(imageClass, linkClass) {
+	function ImageZoomer(imageClass, linkClass, containerElem) {
 		var self = this;
 		linkClass = linkClass || imageClass;
 		if (!imageClass || !linkClass) {
@@ -20,7 +20,8 @@ define([], function () {
 		this.images = [];
 		this.imageClass = imageClass;
 		this.linkClass = linkClass;
-		this.imageElems = $('.' + imageClass);
+		this.__rootElem = containerElem || document;
+		this.imageElems = this.__rootElem.getElementsByClassName(imageClass);
 		[].forEach.call(this.imageElems, function (imageElem) {
 			// Что же я хотел этим сказать? О_о
 			// ...ах да, если в массиве еще нет объектов с img == dataset.href, добавить его!
@@ -136,7 +137,7 @@ define([], function () {
 			var goodTarget = evt.target.classList.contains(self.imageClass) ? evt.target : evt.target.closest("." + self.imageClass);
 			// console.log('Target: ', goodTarget, self.imageClass, evt.target);
 
-			if (!goodTarget) {
+			if (!goodTarget || !self.__rootElem.contains(goodTarget)) {
 				return;
 			}
 
