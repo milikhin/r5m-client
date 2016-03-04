@@ -1,3 +1,12 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body.with-dimmer {
+  overflow: hidden;
+}
+
 .clearfix::after {
   content: "";
   display: table;
@@ -7,18 +16,8 @@
 .flexible-container {
   min-width: 800px;
   max-width: 1400px;
-  /*width: 95%;*/
   margin: auto;
   padding: 0 50px;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-}
-
-body.with-dimmer {
-  overflow: hidden;
 }
 
 /*.skype_c2c_text_span {
@@ -29,15 +28,6 @@ body.with-dimmer {
   display: none!important;
 }
 
-section h2 {
-  font-size: 1.5rem;
-  text-transform: uppercase;
-
-  text-align: center;
-  margin: 20px 0 50px 0;
-}
-
-section {
-  padding: 30px 0;
-  background-color: #efefef;
+.mobile-only {
+  display: none!important;
 }

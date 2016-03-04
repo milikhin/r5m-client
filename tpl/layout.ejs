@@ -2,26 +2,34 @@
 <html>
 
 <head>
+  <%# Meta %>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <% if(locals.isMobile) { %>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <% } %>
 
+  <%# Title %>
   <title>
     <% if(subtitle) { %>
       <%= subtitle %>.
     <% } %>
     <%= title.replace(/<br\/>/, ' ') %>
   </title>
+
+  <%# Styles, Fonts %>
   <link href="./dist/lp.css" rel="stylesheet" type="text/css" />
   <% for (var i=0; i<locals.fonts.google.length; i++) { %>
-  <link href="<%= locals.fonts.google[i] %>" rel="stylesheet" type="text/css">
+    <link href="<%= locals.fonts.google[i] %>" rel="stylesheet" type="text/css">
   <% } %>
 </head>
 
 <body>
+  <%# Page content %>
   <% for(var i=0; i<locals.parts.length; i++) { %>
   <%- include('../../../tpl/partials/' + locals.parts[i]) %>
   <% } %>
 
+  <%# Client config and initialization %>
   <script>
     window.r5m = {
       app: {
@@ -38,8 +46,6 @@
     };
   </script>
   <script src="./dist/require.js"></script>
-
   <%- include('./client.ejs') %>
 </body>
-
 </html>
