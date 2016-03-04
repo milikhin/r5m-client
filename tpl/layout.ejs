@@ -3,6 +3,8 @@
 
 <head>
   <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>
     <% if(subtitle) { %>
       <%= subtitle %>.
@@ -24,14 +26,15 @@
     window.r5m = {
       app: {
         // FEEDBACK_SERVICE: 'emailjs',
-        FEEDBACK_SERVICE: '<%= feedbackService %>'
+        FEEDBACK_SERVICE: '<%= feedbackService %>',
+        FEEDBACK_EMAIL: '<%= feedbackEmail %>'
       },
       yandex: {
         COUNTER_ID: '<%= yandexId %>',
         DEFAULT_GOAL: 'r5m-call-me'
       },
-      modules: ['feedback', 'r5mDimmer', 'carousel', 'gallery', 'page', 'utm-content'],
-      utmContent: <%- locals.utmContent ? JSON.stringify(locals.utmContent) : {}%>
+      modules: ['menu-highlighter', 'feedback', 'r5mDimmer', 'carousel', 'gallery', 'page', 'utm-content'],
+      utmContent: <%- JSON.stringify(locals.utmContent || {}) %>
     };
   </script>
   <script src="./dist/require.js"></script>
