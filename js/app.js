@@ -7,7 +7,9 @@ define([
 	'r5m/modules/feedback/controller',
 	'r5m/modules/gallery/controller',
 	'r5m/modules/utm-content/controller',
-	'r5m/modules/carousel/controller'
+	'r5m/modules/carousel/controller',
+	'r5m/modules/menu-highlighter/controller'
+
 ], function (applyClosestPolyfill, applyCustomEventPolyfill) {
 
 	return function (modules) {
