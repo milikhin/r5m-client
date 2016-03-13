@@ -24,5 +24,6 @@
   "dependencies": {
     "requirejs": "^2.1.22",
     "qwest": "^3.0.0"
-  }
+  },
+  "version": "0.0.4"
 }
