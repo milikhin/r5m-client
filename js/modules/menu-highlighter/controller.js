@@ -5,9 +5,10 @@ define([], function() {
 
   MenuHighlighter.prototype.init = function() {
     [].forEach.call(document.querySelectorAll('a'), function(linkElem) {
-      console.log(linkElem.href, window.location.protocol + "//" + window.location.host + window.location.pathname)
+      var targetElem = linkElem.closest('.r5m-nav-link') || linkElem;
+
       if(linkElem.href == window.location.protocol + "//" + window.location.host + window.location.pathname) {
-        linkElem.classList.add('active');
+        targetElem.classList.add('active');
       }
     });
   };
