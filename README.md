@@ -12,9 +12,11 @@
 
 ### v0.0.6 ###
 * *julistudio.ru*
-* *r5m.me*
 * *interior-nk.ru*
 * *cko-sb.ru*
+
+### v0.0.5 ###
+* *r5m.me*
 
 ### v0.0.3 ###
 * *ckb-nk.ru*
