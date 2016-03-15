@@ -11,10 +11,10 @@
 ## Активные проекты ##
 
 ### v0.0.6 ###
-* **julistudio.ru** (emailjs)
-* **interior-nk.ru** (formspree)
+* **julistudio.ru** (emailjs, iubenda)
+* **interior-nk.ru** (formspree, iubenda)
 * **cko-sb.ru** (emailjs)
-* **r5m.me** (formspree)
+* **r5m.me** (formspree, iubenda)
 
 ### v0.0.3 ###
 * **ckb-nk.ru** (emailjs)
