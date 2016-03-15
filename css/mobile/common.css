@@ -10,3 +10,13 @@
 .nomobile-only {
   display: none!important;
 }
+
+.r5m-dimmer .r5mFeedback {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.r5m-dimmer .r5mFeedback__submit-button {
+  width: 100%;
+  box-sizing: border-box;
+}
