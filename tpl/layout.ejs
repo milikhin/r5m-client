@@ -39,7 +39,8 @@
       app: {
         // FEEDBACK_SERVICE: 'emailjs',
         FEEDBACK_SERVICE: '<%= feedbackService %>',
-        FEEDBACK_EMAIL: '<%= feedbackEmail %>'
+        FEEDBACK_EMAIL: '<%= feedbackEmail %>',
+        FEEDBACK_TEMPLATE: '<%= locals.emailjsTpl || "default-emailjs-template" %>'
       },
       yandex: {
         COUNTER_ID: '<%= yandexId %>',

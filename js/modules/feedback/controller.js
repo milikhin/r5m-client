@@ -89,7 +89,7 @@ define([
       case 'emailjs':
         {
           try {
-            return window.emailjs.send("info", "callme", data);
+            return window.emailjs.send("info", window.r5m.app.FEEDBACK_TEMPLATE, data);
           } catch (err) {
             console.log('error sending with emailjs.com');
           }
