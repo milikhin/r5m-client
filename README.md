@@ -14,14 +14,10 @@
 * *julistudio.ru*
 * *interior-nk.ru*
 * *cko-sb.ru*
-
-### v0.0.5 ###
 * *r5m.me*
 
 ### v0.0.3 ###
-* *ckb-nk.ru*
-
-TODO: перевести все актуальные сайты на v0.0.4
+* *ckb-nk.ru* TODO: перевести на v0.0.4+
 
 
 ## Модули ##
