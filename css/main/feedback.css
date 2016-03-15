@@ -239,3 +239,14 @@
 .r5m-dimmer .r5mFeedback__form__offer {
   color: #333;
 }
+
+
+.r5mFeedback__privacy-statement {
+  text-align: left;
+  font-size: 0.8em;
+  margin: 5px 0;
+}
+
+.r5m-dimmer .r5mFeedback__privacy-statement a {
+  color: #666;
+}
