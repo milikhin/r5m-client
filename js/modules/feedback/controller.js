@@ -60,7 +60,7 @@ define([
     form.onsubmit = function() {
       var data = {};
       self._disableSubmit(form);
-      ['name', 'phone', 'email', 'text'].forEach(function(field) {
+      ['name', 'phone', 'email', 'text', 'page'].forEach(function(field) {
         if (form[field]) {
           data[field] = form[field].value;
         }
@@ -129,7 +129,7 @@ define([
   };
 
   FeedbackController.prototype._showSuccessDialog = function(form, type) {
-    console.log(form, type);
+    // console.log(form, type);
     dimmer.showDimmer(form, type);
   };
 
