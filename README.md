@@ -11,13 +11,13 @@
 ## Активные проекты ##
 
 ### v0.0.6 ###
-* *julistudio.ru*
-* *interior-nk.ru*
-* *cko-sb.ru*
-* *r5m.me*
+* *julistudio.ru*, emailjs
+* *interior-nk.ru*, formspree
+* *cko-sb.ru*, emailjs
+* *r5m.me*, formspree
 
 ### v0.0.3 ###
-* *ckb-nk.ru*  
+* *ckb-nk.ru*, emailjs
    TODO: перевести на v0.0.4+
 
 
