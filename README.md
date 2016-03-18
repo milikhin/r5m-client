@@ -10,16 +10,14 @@
 
 ## Активные проекты ##
 
+### master ###
+* **r5m.me** (formspree, iubenda)
+* **ckb-nk.ru** (emailjs)
+
 ### v0.0.6 ###
 * **julistudio.ru** (emailjs, iubenda)
 * **interior-nk.ru** (formspree, iubenda)
 * **cko-sb.ru** (emailjs)
-* **r5m.me** (formspree, iubenda)
-
-### v0.0.3 ###
-* **ckb-nk.ru** (emailjs)
-   TODO: перевести на v0.0.4+
-
 
 ## Модули ##
 ### Carousel ###
