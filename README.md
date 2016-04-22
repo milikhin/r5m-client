@@ -12,12 +12,14 @@
 
 ### master ###
 * **r5m.me** (formspree, iubenda)
-* **ckb-nk.ru** (emailjs)
 
+### v0.0.7 ###
+* **ckb-nk.ru** (emailjs)
+* **cko-sb.ru** (emailjs)
+* 
 ### v0.0.6 ###
 * **julistudio.ru** (emailjs, iubenda)
 * **interior-nk.ru** (formspree, iubenda)
-* **cko-sb.ru** (emailjs)
 
 ## Модули ##
 ### Carousel ###
