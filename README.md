@@ -14,9 +14,11 @@
 * **r5m.me** (formspree, iubenda)
 
 ### v0.0.7 ###
-* **ckb-nk.ru** (emailjs)
 * **cko-sb.ru** (emailjs)
  
+### v0.0.6+ ###
+* **ckb-nk.ru** (emailjs, built from master branch after 0.0.6, but doesn't contain image caching from 0.0.7, should work with 0.0.7)
+
 ### v0.0.6 ###
 * **julistudio.ru** (emailjs, iubenda)
 * **interior-nk.ru** (formspree, iubenda)
