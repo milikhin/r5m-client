@@ -70,8 +70,15 @@ define([], function() {
         this.slider = slider;
         this.sliderCaptionElem = imgCaptionContent;
         this.preloaderImgElem = document.createElement('img');
-        this.speedUpPreloaderElem = document.createElement('img');
-				this.sliderImageElem = sliderImage;
+
+				this.speedUpPreloaderElem = document.createElement('img');
+				document.body.appendChild(this.speedUpPreloaderElem);
+				this.speedUpPreloaderElem.style.position = "absolute";
+				this.speedUpPreloaderElem.style.height = 0;
+				this.speedUpPreloaderElem.style.width = 0;
+				this.speedUpPreloaderElem.style.borderWidth = 0;
+
+        this.sliderImageElem = sliderImage;
         this.preloaderImgElem.onload = function() {
             sliderImage.classList.remove('fade-in');
             sliderImage.classList.add('fade-out');
@@ -212,7 +219,8 @@ define([], function() {
     };
 
     ImageZoomer.prototype._cacheImage = function(index) {
-				this.speedUpPreloaderElem.src = this.images[index].url;
+        console.log(this.images[index].url);
+        this.speedUpPreloaderElem.src = this.images[index].url;
     };
 
     ImageZoomer.prototype.showPicture = function(hrefOrIndex) {
@@ -236,6 +244,7 @@ define([], function() {
             if (curIndex > 0) {
                 this.speedUpPreloaderElem.onload = function() {
                     self._cacheImage(curIndex - 1);
+										this.onload = function() {};
                 }
             }
         } else if (curIndex > 0) {
