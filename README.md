@@ -15,10 +15,10 @@
 
 ### v0.0.7 ###
 * **cko-sb.ru** (emailjs)
- 
+* **interior-nk.ru** (formspree, iubenda)
+* 
 ### v0.0.6+ ###
 * **ckb-nk.ru** (emailjs, built from master branch after 0.0.6, but doesn't contain image caching from 0.0.7, should work with 0.0.7)
-* **interior-nk.ru** (formspree, iubenda)
 
 ### v0.0.6 ###
 * **julistudio.ru** (emailjs, iubenda)
