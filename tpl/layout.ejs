@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <% } %>
   <% if (locals.meta) { %>
-    <%- include('../../../tpl/partials/' + locals.meta) %>
+    <%- include((locals.isCms ? '../../../../tpl/partials/' : '../../../tpl/partials/') + locals.meta) %>
   <% } %>
   <%# Title %>
   <title>
@@ -19,11 +19,11 @@
   </title>
 
   <%# Favicon %>
-  <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
-  <link rel="icon" href="./favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
 
   <%# Styles, Fonts %>
-  <link href="./engine/lp.css" rel="stylesheet" type="text/css" />
+  <link href="<%- (locals.isCms ? '/css/style-full.css' : './engine/lp.css')  %>" rel="stylesheet" type="text/css" />
   <% for (var i=0; i<locals.fonts.google.length; i++) { %>
     <link href="<%= locals.fonts.google[i] %>" rel="stylesheet" type="text/css">
   <% } %>
@@ -32,7 +32,7 @@
 <body>
   <%# Page content %>
   <% for(var i=0; i<locals.parts.length; i++) { %>
-  <%- include('../../../tpl/partials/' + locals.parts[i]) %>
+  <%- include((locals.isCms ? '../../../../tpl/body/' : '../../../tpl/partials/') + locals.parts[i]) %>
   <% } %>
 
   <%# Client config and initialization %>
@@ -48,11 +48,11 @@
         COUNTER_ID: '<%= yandexId %>',
         DEFAULT_GOAL: 'r5m-call-me'
       },
-      modules: ['menu-highlighter', 'feedback', 'r5mDimmer', 'carousel', 'gallery', 'page', 'utm-content'],
+      modules: <%- JSON.stringify(['menu-highlighter', 'feedback', 'r5mDimmer', 'carousel', 'gallery', 'page', 'utm-content'].concat(clientModules)) %>,
       utmContent: <%- JSON.stringify(locals.utmContent || {}) %>
     };
   </script>
-  <script src="./engine/require.js"></script>
+  <script src="/engine/require.js"></script>
   <%- include('./client.ejs') %>
 </body>
 </html>

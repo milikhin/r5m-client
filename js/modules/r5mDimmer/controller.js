@@ -89,16 +89,6 @@ define([], function() {
     }
 
     this.dimmer.classList.add('r5m-dimmer-active');
-
-
-
-
-    // try {
-    // 	var commentsTextElem = this.dimmer.getElementsByClassName('r5mFeedback__text')[0];
-    // 	// feedback.setText(commentsTextElem, defaultText);
-    // } catch (err) {
-    // 	console.error(err);
-    // }
   };
 
   return new r5mDimmer();

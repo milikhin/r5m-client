@@ -1,5 +1,10 @@
 <script>
-  require.config({baseUrl: './'});
+  require.config({
+    baseUrl: '/',
+    paths: {
+        text: "bower_components/text/text"
+    }
+  });
 
   require(['engine/lp'], function () {
     require(['r5m/app'], function (app) {
