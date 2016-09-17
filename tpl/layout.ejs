@@ -49,6 +49,7 @@
         DEFAULT_GOAL: 'r5m-call-me'
       },
       modules: <%- JSON.stringify(['menu-highlighter', 'feedback', 'r5mDimmer', 'carousel', 'gallery', 'page', 'utm-content'].concat(clientModules)) %>,
+      startupScript: "<%= locals.startupScript || false %>",
       utmContent: <%- JSON.stringify(locals.utmContent || {}) %>
     };
   </script>

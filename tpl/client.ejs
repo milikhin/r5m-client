@@ -7,6 +7,10 @@
   });
 
   require(['engine/lp'], function () {
+    <% if(locals.startupScript) { %>
+      require(["<%= locals.startupScript %>"]);
+    <% } %>
+
     require(['r5m/app'], function (app) {
       app(window.r5m.modules);
     });
