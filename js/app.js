@@ -62,9 +62,14 @@ define([
             var moduleAction = action.split('__');
             if (moduleAction.length < 2) return;
 
-            e.preventDefault();
+            if(!target.dataset.actionDefault) {
+              e.preventDefault();
+            } else {
+              // e.preventDefault();
+              // e.stopPropagation();
+            }
             console.log(moduleAction, activeModules);
-						console.log(activeModules.map(function(m) {return m.title;}));
+						// console.log(activeModules.map(function(m) {return m.title;}));
             activeModules.forEach(function(module) {
                 if (moduleAction[0] == module.title && module.clickHandler) {
                     module.clickHandler(moduleAction[1], target); //передаем только action в модуль

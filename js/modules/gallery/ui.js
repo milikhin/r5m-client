@@ -142,7 +142,7 @@ define([], function() {
         }
         var self = this;
         document.body.addEventListener('click', function(evt) {
-            var goodTarget = evt.target.classList.contains(self.imageClass) ? evt.target : evt.target.closest("." + self.imageClass);
+            var goodTarget = evt.target.closest("." + self.linkClass);
             // console.log('Target: ', goodTarget, self.imageClass, evt.target);
 
             if (!goodTarget || !self.__rootElem.contains(goodTarget)) {
