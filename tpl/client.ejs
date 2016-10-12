@@ -3,7 +3,20 @@
     baseUrl: '/',
     paths: {
         text: "bower_components/text/text"
-    }
+    },
+    packages: [{
+      "name": "dojo",
+      "location" : "bower_components/dojo",
+      "main": "dojo"
+    }, {
+      "name": "dijit",
+      "location" : "bower_components/dijit",
+      "main": "dijit"
+    },{
+      "name": "app",
+      "location" : "js/app",
+      "main": "index"
+    }]
   });
 
   require(['engine/lp'], function () {
