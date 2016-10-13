@@ -1,11 +1,14 @@
 define(['./carousel'], function (Carousel) {
-  console.log(Carousel);
+	console.log(Carousel);
 
-  function CarouselController() {}
+	function CarouselController() {}
 
 	CarouselController.prototype.init = function () {
 		[].forEach.call(document.querySelectorAll('.carousel'), function (elem) {
-			new Carousel(elem);
+			new Carousel(elem, {
+				isAuto: !(elem.dataset && elem.dataset.manual),
+        rounded: true
+			});
 		});
 	};
 
