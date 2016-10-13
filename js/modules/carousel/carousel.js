@@ -14,6 +14,7 @@ define([], function() {
         this.settings = {
             step: options ? options.step || 1 : 1,
             isRounded: options ? options.rounded : true,
+            isAuto: options ? !options.manual : true,
             classNames: {
                 leftButton: "carousel__left-button",
                 rightButton: "carousel__right-button",
