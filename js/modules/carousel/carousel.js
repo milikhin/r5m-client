@@ -1,7 +1,7 @@
 /**
  * @module Carousel.
  * @autor mikhael
- * @version 1.0*
+ * @version 1.1*
  * @param options - options object.
  *     options.rounded - if true carousel will be infinite, if false - will stop at last/first slides
  */
@@ -11,6 +11,7 @@ define([], function() {
 
     function Carousel(elem, options) {
         var self = this;
+        // console.log('Carousel', options ? !options.manual : true)
         this.settings = {
             step: options ? options.step || 1 : 1,
             isRounded: options ? options.rounded : true,
@@ -164,9 +165,11 @@ define([], function() {
         var self = this;
         this.carouselContentElem.classList.remove(this.settings.classNames.animation);
         this.moveToSlide(this.settings.isRounded ? 1 : 0);
-        this.carouselInterval = setInterval(function() {
+        if(this.settings.isAuto) {
+          this.carouselInterval = setInterval(function() {
             self.moveRight(true);
-        }, 10000);
+          }, 10000);
+        }
     };
 
     Carousel.prototype._enableInfinityRoundLoop = function() {
