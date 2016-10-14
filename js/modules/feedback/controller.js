@@ -60,19 +60,20 @@ define([
     form.onsubmit = function() {
       var data = {};
       self._disableSubmit(form);
-      ['name', 'phone', 'email', 'text', 'page'].forEach(function(field) {
-        if (form[field]) {
-          data[field] = form[field].value;
+      [].forEach.call(form, function(field) {
+        var name = field.getAttribute('name');
+        if (form[name]) {
+          data[name] = form[name].value;
         }
       });
 
       self._reachYandexGoal(form.dataset.metrikaGoal);
 
       self.send(data).then(function() {
-        self._showSuccessDialog(form, 'thanks');
+        self._showSuccessDialog(form, form.dataset.next || 'thanks');
         self._enableSubmit(form);
       }, function() {
-        self._showSuccessDialog(form, 'oops');
+        self._showSuccessDialog(form, form.dataset.oops || 'oops');
         self._enableSubmit(form);
       });
 
@@ -84,6 +85,9 @@ define([
     if (!data) {
       throw new Error('Data required to send message');
     }
+    // console.log(this._service, data);
+    // return;
+
 
     switch (this._service) {
       case 'emailjs':
@@ -98,11 +102,21 @@ define([
         }
 
       case 'formspree':
-      default:
         {
           data._subject = 'Сообщение на сайте';
           return xhr.post('https://formspree.io/' + (window.r5m.app.FEEDBACK_EMAIL || 'milikhin@gmail.com'), data, {
             cache: true,
+            headers: {
+              'Accept': 'application/json'
+            }
+          });
+
+          break;
+        }
+      case 'ownmail':
+      default:
+        {
+          return xhr.post('/feedback/call', data, {
             headers: {
               'Accept': 'application/json'
             }
