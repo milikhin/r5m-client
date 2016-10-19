@@ -1,25 +1,31 @@
 <script>
-  require.config({
-    baseUrl: '/',
-    paths: {
-        text: "bower_components/text/text"
-    },
-    packages: [{
-      "name": "dojo",
-      "location" : "bower_components/dojo",
-      "main": "dojo"
-    }, {
-      "name": "dijit",
-      "location" : "bower_components/dijit",
-      "main": "dijit"
-    },{
-      "name": "app",
-      "location" : "js/app",
-      "main": "index"
-    }]
-  });
+  if(require && require.config){
+    require.config({
+      baseUrl: '/',
+      paths: {
+          text: "bower_components/text/text"
+      },
+      packages: [{
+        "name": "dojo",
+        "location" : "js/release/dojo",
+        "main": "dojo"
+      }, {
+        "name": "dijit",
+        "location" : "js/release/dijit",
+        "main": "dijit"
+      },{
+        "name": "app",
+        "location" : "js/app",
+        "main": "index"
+      }]
+    });
+  }
+
+
+
 
   require(['engine/lp'], function () {
+    <% console.log(locals.startupScript) %>
     <% if(locals.startupScript) { %>
       require(["<%= locals.startupScript %>"]);
     <% } %>
