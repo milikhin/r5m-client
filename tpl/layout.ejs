@@ -54,7 +54,34 @@
     };
   </script>
   <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
-  <script src="/engine/require.js"></script>
+  <script>
+    dojoConfig = {
+        baseUrl: '/',
+
+        has: {
+            "dojo-firebug": true
+        },
+        packages: [{
+          "name": "dojo",
+          "location" : "js/release/dojo",
+          "main": "dojo"
+        }, {
+          "name": "dijit",
+          "location" : "js/release/dijit",
+          "main": "dijit"
+        }, {
+          "name": "engine",
+          "location" : "engine",
+          "main": "lp"
+        },{
+          name: "app",
+          location: "js/app"
+        }],
+        parseOnLoad: false,
+        async: true
+    };
+  </script>
+  <script src="<%= locals.user.authenticated ? '/js/release/dojo/dojo.js' : '/engine/require.js' %>"></script>
   <%- include('./client.ejs') %>
 </body>
 </html>
