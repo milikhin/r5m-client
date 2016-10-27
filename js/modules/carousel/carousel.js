@@ -1,7 +1,7 @@
 /**
  * @module Carousel.
  * @autor mikhael
- * @version 1.1*
+ * @version 1.0*
  * @param options - options object.
  *     options.rounded - if true carousel will be infinite, if false - will stop at last/first slides
  */
@@ -15,7 +15,7 @@ define([], function() {
         this.settings = {
             step: options ? options.step || 1 : 1,
             isRounded: options ? options.rounded : true,
-            isAuto: options ? !options.manual : true,
+            isAuto: options ? options.isAuto : true,
             classNames: {
                 leftButton: "carousel__left-button",
                 rightButton: "carousel__right-button",
@@ -45,7 +45,7 @@ define([], function() {
         window.addEventListener('resize', this.resize.bind(this));
         var currentSlide = +this.carouselContentElem.getAttribute('data-carousel-currentSlide');
         this.moveToSlide(currentSlide);
-        console.log('moved!');
+        // console.log('moved!');
     }
 
     Carousel.prototype.resize = function() {
@@ -71,6 +71,7 @@ define([], function() {
     };
 
     Carousel.prototype.moveToSlide = function(slideNumber, isClearInterval) {
+        var self = this;
         if (isClearInterval && this.carouselInterval) {
             clearInterval(this.carouselInterval);
         }
@@ -89,7 +90,8 @@ define([], function() {
         var dotsContainer = this.carouselElem.getElementsByClassName('carousel__dots')[0];
         if (dotsContainer) {
             [].forEach.call(dotsContainer.getElementsByClassName('carousel__dots__dot'), function(dotElem, index) {
-                if (index == slideNumber) {
+
+                if (index == slideNumber || index + self.realItemsCount == slideNumber) {
                     dotElem.classList.add('carousel__dots__dot--active');
                 } else {
                     dotElem.classList.remove('carousel__dots__dot--active');
@@ -165,10 +167,10 @@ define([], function() {
         var self = this;
         this.carouselContentElem.classList.remove(this.settings.classNames.animation);
         this.moveToSlide(this.settings.isRounded ? 1 : 0);
-        if(this.settings.isAuto) {
-          this.carouselInterval = setInterval(function() {
-            self.moveRight(true);
-          }, 10000);
+        if (this.settings.isAuto) {
+            this.carouselInterval = setInterval(function() {
+                self.moveRight(true);
+            }, 10000);
         }
     };
 
