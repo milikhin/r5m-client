@@ -25,7 +25,6 @@
 
 
   require(['engine/lp'], function () {
-    <% console.log(locals.startupScript) %>
     <% if(locals.startupScript) { %>
       require(["<%= locals.startupScript %>"]);
     <% } %>
