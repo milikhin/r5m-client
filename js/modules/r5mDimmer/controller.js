@@ -25,6 +25,18 @@ define([], function () {
 		}
 	};
 
+	r5mDimmer.prototype._reachYandexGoal = function(goalName) {
+    //нужно убедиться что метрика точно есть и что цель точно есть
+    try {
+      var metrikaConf = window.r5m.yandex;
+      // console.log("yaCounter" + metrikaConf.COUNTER_ID);
+      window["yaCounter" + metrikaConf.COUNTER_ID].reachGoal(goalName || metrikaConf.DEFAULT_GOAL);
+    } catch (e) {
+      console.log('Error in metrika', e);
+    }
+
+  };
+
 	r5mDimmer.prototype.showDimmer = function (target, type) {
 		var self = this;
 		if (!this.dimmer) {
@@ -74,6 +86,10 @@ define([], function () {
 		var elementToShow = this.dimmer.getElementsByClassName('r5m-dimmer-' + type)[0];
 		//console.log("e", this.dimmer.getElementsByClassName('r5m-dimmer-' + type));
 		if (elementToShow) {
+			if(elementToShow.dataset && elementToShow.dataset.metrikaGoal) {
+				this._reachYandexGoal(elementToShow.dataset.metrikaGoal);
+			}
+
 			elementToShow.classList.remove('is-hidden');
       [].forEach.call(elementToShow.querySelectorAll('input, textarea'), function (inputElem) {
 				var inputName = inputElem.getAttribute('name');
