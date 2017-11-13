@@ -9,22 +9,13 @@
 * [Транслитерация](#trans)
 
 ## Активные проекты ##
-### master ###
-v0.0.7+ is incompatible with previous releases.
-
-* **vdo-nk.ru (WIP)**
-
-### v0.0.7 ###
-* **cko-sb.ru** (emailjs)
-* **interior-nk.ru** (formspree, iubenda)
-* **r5m.me** (formspree, iubenda, UNTESTED on v0.0.7, but should work)
+### v0.0.8 ###
+v0.0.8 is incompatible with v0.0.7- projects
+* **vdo-nk.ru**
+* **cko-sb.ru (новая версия)**
 
 ### v0.0.6+ ###
 * **ckb-nk.ru** (emailjs, built from master branch after 0.0.6, but doesn't contain image caching from 0.0.7, should work with 0.0.7)
-
-### v0.0.6 ###
-* **julistudio.ru** (emailjs, iubenda)
-
 
 ## Модули ##
 ### Carousel ###
